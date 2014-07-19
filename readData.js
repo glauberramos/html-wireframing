@@ -58,6 +58,8 @@ function addComment(id) {
 	  	comment.save();
 
   		$(feedback).find('.comments').append(Mustache.render(commentTemplate, new uifeedback.model.comment(feedback.find('.name').val(), feedback.find('.text').val())));
+  		feedback.find('.name').val('')
+  		feedback.find('.text').val('')
 	  }
-});
+	});
 }
