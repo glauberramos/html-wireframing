@@ -47,7 +47,7 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 8px 6px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-.feedback:hover .feedback-content {
+.feedback .feedback-content {
   display: block;
 }
 
@@ -98,6 +98,10 @@
   margin-left: 3px;
   margin-bottom: 3px;
   width: 342px;
+  background: none;
+  border: 1px dashed #ccc;
+  padding: 12px;
+  margin-bottom: 5px;
 }
 
 .feedback-input {

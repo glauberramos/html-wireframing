@@ -11,7 +11,6 @@ var uifeedback = uifeedback || {};
 	}
 
 	return {
-		id: function() { return id; },
 		selector: function() { return selector; },
 		number: function() { return number; },
 		comments: function() { return comments; },
