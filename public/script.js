@@ -20,7 +20,7 @@ $(document).ready(function() {
 });
 
 function addFeedback(event) {
-	if(addingFeedback && unique(event.target) != '#add-feedback') {
+	if(addingFeedback && unique(event.target) != '#add-feedback' && !feedbackSelectors.contains(unique(event.target))) {
 		addingFeedback = false;
 		event.stopImmediatePropagation();
 		$('body').append($('<style>body { cursor: auto; }</style>'))
@@ -28,6 +28,7 @@ function addFeedback(event) {
 
 		var selector = unique(event.target);
 		var nextFeedbackId = $('.feedback').length + 1;
+		feedbackSelectors.push(selector);
 
 		var feedbackFrontend = new uifeedback.model.feedback(nextFeedbackId, selector); 
 		var feedbackHtml = Mustache.render(feedbackTemplate, feedbackFrontend);

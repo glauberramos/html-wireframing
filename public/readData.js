@@ -1,4 +1,5 @@
 newData = [];
+feedbackSelectors = [];
 
 var query = new Parse.Query(Feedback);
 var count = 0;
@@ -7,6 +8,7 @@ query.find({
   success: function(results) {
     $(results).each(function() {
     	var feedback = new uifeedback.model.feedback(this.get('feedbackId'), this.get('selector')); 
+    	feedbackSelectors.push(this.get('selector'));
 
 		var query = new Parse.Query(Comment);
 		query.equalTo("parent", this);
