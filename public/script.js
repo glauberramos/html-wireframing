@@ -1,7 +1,7 @@
 addingFeedback = false;
 
 $(document).ready(function() {
-	$('body').append($('<span class="adding-feedback">PLEASE CLICK ON AN ELEMENT TO ADD FEEDBACK</span><span class="feedback-controls"><span class="open-close">|||</span><button id="add-feedback">ADD FEEDBACK</button><button id="toggle-notes">HIDE NOTES</button></span>'));
+	$('body').append($('<span class="adding-feedback">PLEASE CLICK ON AN ELEMENT TO ADD A NOTE</span><span class="feedback-controls"><span class="open-close">|||</span><button id="add-feedback">ADD NOTE</button><button id="toggle-notes">HIDE NOTES</button></span>'));
 
 	$('#add-feedback').click(function() {
 		addingFeedback = true;

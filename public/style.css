@@ -10,8 +10,8 @@
 
 .open-close {
   position: relative;
-  left: -20px;
-  font-size: 1.5em;
+  left: -18px;
+  font-size: 1.3em;
   top: 60px;
   width: 16px;
   cursor: pointer;
@@ -20,7 +20,7 @@
   vertical-align: top;
   background: #267CB6;
   color: white;
-  padding: 18px 2px 0px 2px;
+  padding: 18px 0px 0px 4px;
   border-radius: 4px 0px 0px 4px;
 }
 
