@@ -151,3 +151,7 @@
 .feedback .feedback-input:focus, .feedback-input[value=""] {
   border: 1px solid transparent;
 }
+
+.border {
+  border: 2px solid #3498db;
+}

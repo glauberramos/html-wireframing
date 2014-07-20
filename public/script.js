@@ -8,6 +8,14 @@ $(document).ready(function() {
 		$('body').append($('<style>body { cursor: -webkit-image-set(url(add.png) 1x, url(add.png) 2x),auto; }</style>'))
 		document.addEventListener('click', addFeedback, false);
 	});
+
+	$("body *").hover(function(event) {
+		if(addingFeedback) {
+			$(event.target).addClass('border');
+		}
+	}, function(event) {
+		$(event.target).removeClass('border');
+	});
 });
 
 function addFeedback(event) {
