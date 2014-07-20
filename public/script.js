@@ -1,7 +1,7 @@
 addingFeedback = false;
 
 $(document).ready(function() {
-	$('body').append($('<button id="add-feedback">Add feedback</button>'));
+	$('body').append($('<span class="feedback-controls"><button id="add-feedback">ADD FEEDBACK</button><button id="toggle-notes">HIDE NOTES</button></span>'));
 
 	$('#add-feedback').click(function() {
 		addingFeedback = true;
@@ -9,13 +9,23 @@ $(document).ready(function() {
 		document.addEventListener('click', addFeedback, false);
 	});
 
+	$('#toggle-notes').click(function() {
+		if($('#toggle-notes').text() == "HIDE NOTES") {
+			$('.feedback').hide();
+			$('#toggle-notes').text("SHOW NOTES");
+		} else {
+			$('.feedback').show();
+			$('#toggle-notes').text("HIDE NOTES");
+		}
+	});
+
 	$("body *").hover(function(event) {
-		$('body *').attr('style', 'outline: none;');
+		$('body *').css('outline', 'none');
 		if(addingFeedback) {
-			$(event.target).attr('style', 'outline: 4px solid #3498db;');
+			$(event.target).css('outline', '4px solid #3498db');
 		}
 	}, function(event) {
-		$(event.target).attr('style', 'outline: none;');
+		$(event.target).css('outline', 'none');
 	});
 });
 

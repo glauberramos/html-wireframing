@@ -1,7 +1,18 @@
-#add-feedback {
+.feedback-controls {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  right: 0;
+}
+
+.feedback-controls button {
+  height: 30px;
+  background: #5fbe20;
+  border: none;
+  color: white;
+  outline: none;
+  width: 100px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .feedback .btn {
