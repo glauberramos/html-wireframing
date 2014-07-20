@@ -48,6 +48,7 @@ function addComment(id) {
   var feedback = $('[data-id=' + id + ']');
   
   if(feedback.find('.name').val() != "" && feedback.find('.text').val() != "") {
+      feedback.find('.btn').attr('disabled', 'disabled');
 	  var query = new Parse.Query(Feedback);
 	  query.equalTo("feedbackId", id);
 	  query.find({
@@ -61,6 +62,7 @@ function addComment(id) {
 	  	  $(feedback).find('.comments').append(Mustache.render(commentTemplate, new uifeedback.model.comment(feedback.find('.name').val(), feedback.find('.text').val())));
 	  	  feedback.find('.name').val('')
 	  	  feedback.find('.text').val('')
+	  	  feedback.find('.btn').removeAttr('disabled');
 		}
 	  });
 	}

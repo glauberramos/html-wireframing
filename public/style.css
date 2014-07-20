@@ -21,6 +21,11 @@
   margin-top: 7px;
 }
 
+.feedback .btn:disabled {
+  background: #ccc;
+  color: #bbb;
+}
+
 .feedback .user {
   background: #3498db;
   color: white;
