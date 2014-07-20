@@ -46,20 +46,22 @@ function renderData() {
 
 function addComment(id) {
   var feedback = $('[data-id=' + id + ']');
+  
+  if(feedback.find('.name').val() != "" && feedback.find('.text').val() != "") {
+	  var query = new Parse.Query(Feedback);
+	  query.equalTo("feedbackId", id);
+	  query.find({
+	    success: function(feedbacks) {
+		  var comment = new Comment();
+		  comment.set('parent', feedbacks[0]);
+		  comment.set('userName', feedback.find('.name').val());
+		  comment.set('text', feedback.find('.text').val());
+		  comment.save();
 
-  var query = new Parse.Query(Feedback);
-	query.equalTo("feedbackId", id);
-	query.find({
-	  success: function(feedbacks) {
-	    var comment = new Comment();
-	  	comment.set('parent', feedbacks[0]);
-	  	comment.set('userName', feedback.find('.name').val());
-	  	comment.set('text', feedback.find('.text').val());
-	  	comment.save();
-
-  		$(feedback).find('.comments').append(Mustache.render(commentTemplate, new uifeedback.model.comment(feedback.find('.name').val(), feedback.find('.text').val())));
-  		feedback.find('.name').val('')
-  		feedback.find('.text').val('')
-	  }
-	});
+	  	  $(feedback).find('.comments').append(Mustache.render(commentTemplate, new uifeedback.model.comment(feedback.find('.name').val(), feedback.find('.text').val())));
+	  	  feedback.find('.name').val('')
+	  	  feedback.find('.text').val('')
+		}
+	  });
+	}
 }
