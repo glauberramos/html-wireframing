@@ -1,12 +1,22 @@
 addingFeedback = false;
 
 $(document).ready(function() {
-	$('body').append($('<span class="feedback-controls"><button id="add-feedback">ADD FEEDBACK</button><button id="toggle-notes">HIDE NOTES</button></span>'));
+	$('body').append($('<span class="feedback-controls"><span class="open-close">|||</span><button id="add-feedback">ADD FEEDBACK</button><button id="toggle-notes">HIDE NOTES</button></span>'));
 
 	$('#add-feedback').click(function() {
 		addingFeedback = true;
 		$('body').append($('<style>body { cursor: -webkit-image-set(url(add.png) 1x, url(add.png) 2x),auto; }</style>'))
 		document.addEventListener('click', addFeedback, false);
+	});
+
+	$('.open-close').click(function() {
+		if(!$('.feedback-controls').hasClass('open')) {
+			$('.feedback-controls').animate({ width: 100}, 300);
+			$('.feedback-controls').addClass('open');
+		} else {
+			$('.feedback-controls').animate({ width: 0}, 300);
+			$('.feedback-controls').removeClass('open');
+		}
 	});
 
 	$('#toggle-notes').click(function() {

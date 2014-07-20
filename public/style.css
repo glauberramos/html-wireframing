@@ -1,7 +1,23 @@
 .feedback-controls {
   position: fixed;
-  top: 50%;
+  top: 40%;
   right: 0;
+}
+
+.feedback-controls {
+  width: 0px;
+}
+
+.open-close {
+  position: relative;
+  left: -20px;
+  font-size: 1.5em;
+  top: 47px;
+  color: #3498db;
+  width: 16px;
+  height: 29px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .feedback-controls button {
@@ -13,6 +29,8 @@
   width: 100px;
   display: block;
   margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 2px;
 }
 
 .feedback .btn {
