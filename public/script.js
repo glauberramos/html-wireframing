@@ -5,6 +5,7 @@ $(document).ready(function() {
 
 	$('#add-feedback').click(function() {
 		addingFeedback = true;
+		$('#add-feedback').attr('disabled', 'disabled');
 		$('.adding-feedback').addClass('visible');
 		$('body').append($('<style>body { cursor: -webkit-image-set(url(add.png) 1x, url(add.png) 2x),auto; }</style>'))
 		document.addEventListener('click', addFeedback, false);
@@ -44,6 +45,7 @@ function addFeedback(event) {
 	if(addingFeedback && unique(event.target) != '#add-feedback' && !feedbackSelectors.contains(unique(event.target))) {
 		addingFeedback = false;
 		$('.adding-feedback').removeClass('visible');
+		$('#add-feedback').removeAttr('disabled');
 		event.stopImmediatePropagation();
 		$('body').append($('<style>body { cursor: auto; }</style>'))
 		document.removeEventListener('click', addFeedback, false);

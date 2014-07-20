@@ -10,14 +10,18 @@
 
 .open-close {
   position: relative;
-  left: -20px;
+  left: -23px;
   font-size: 1.5em;
-  top: 47px;
-  color: #3498db;
+  top: 63px;
   width: 16px;
-  height: 29px;
   font-weight: 600;
   cursor: pointer;
+  display: block;
+  height: 45px;
+  vertical-align: top;
+  background: #3498db;
+  color: white;
+  padding: 18px 2px 0px 2px;
 }
 
 .adding-feedback {
@@ -29,22 +33,27 @@
   position: fixed;
   top: 0;
   right: 40%;
-  background: #5fbe20;
+  background: #3498db;
   color: white;
   padding: 5px 7px;
 }
 
 .feedback-controls button {
   height: 30px;
-  background: #5fbe20;
+  background: #3498db;
   border: none;
   color: white;
   outline: none;
   width: 100px;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   cursor: pointer;
-  border-radius: 2px;
+  vertical-align: top;
+}
+
+.feedback-controls button:disabled {
+  background: #ccc;
+  color: #aaa;
 }
 
 .feedback .btn {
