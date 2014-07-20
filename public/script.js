@@ -19,15 +19,15 @@ function addFeedback(event) {
 		var selector = unique(event.target);
 		var nextFeedbackId = $('.feedback').length + 1;
 
+		var feedbackFrontend = new uifeedback.model.feedback(nextFeedbackId, selector); 
+		var feedbackHtml = Mustache.render(feedbackTemplate, feedbackFrontend);
+		$(selector).prepend(feedbackHtml);
+
 		var feedback = new Feedback();
 		feedback.set('feedbackId', nextFeedbackId);
 		feedback.set('selector', selector);
 		feedback.save({
 		  success: function(comments) {
-		  	var feedback = new uifeedback.model.feedback(nextFeedbackId, selector); 
-		  	var feedbackHtml = Mustache.render(feedbackTemplate, feedback);
-			$(selector).prepend(feedbackHtml);
-
 			$('[data-id=' + nextFeedbackId + ']').find('.btn').unbind('click').bind('click', function() {
 	    		addComment(nextFeedbackId);
 	    	});
