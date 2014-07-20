@@ -12,10 +12,10 @@ $(document).ready(function() {
 
 	$('.open-close').click(function() {
 		if(!$('.feedback-controls').hasClass('open')) {
-			$('.feedback-controls').animate({ width: 100}, 300);
+			$('.feedback-controls').animate({ width: 100}, 200);
 			$('.feedback-controls').addClass('open');
 		} else {
-			$('.feedback-controls').animate({ width: 0}, 300);
+			$('.feedback-controls').animate({ width: 0}, 200);
 			$('.feedback-controls').removeClass('open');
 		}
 	});
