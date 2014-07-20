@@ -10,11 +10,12 @@ $(document).ready(function() {
 	});
 
 	$("body *").hover(function(event) {
+		$('body *').attr('style', 'outline: none;');
 		if(addingFeedback) {
-			$(event.target).addClass('border');
+			$(event.target).attr('style', 'outline: 4px solid #3498db;');
 		}
 	}, function(event) {
-		$(event.target).removeClass('border');
+		$(event.target).attr('style', 'outline: none;');
 	});
 });
 

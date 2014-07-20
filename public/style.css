@@ -1,11 +1,3 @@
-.example {
-  height: 20%;
-  width: 20%;
-  background: #ccc;
-  margin: 2em;
-  display: inline-block;
-}
-
 #add-feedback {
   position: fixed;
   top: 0;
