@@ -66,8 +66,8 @@
     display: none;
     background-color: #f3f3f3;
     border-radius: 7px;
-    margin-top: -3px;
-    margin-left: 3px;
+    margin-top: 1px;
+    margin-left: -1px;
     width: 250px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 8px 6px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
@@ -80,9 +80,9 @@
   border: solid;
   border-color: #F3F3F3 transparent;
   border-width: 0px 7px 9px 7px;
-  bottom: 2px;
+  bottom: -2px;
+  left: 7px;
   content: "";
-  left: 9px;
   position: absolute;
   z-index: 99;
 }
