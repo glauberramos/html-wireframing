@@ -10,32 +10,35 @@
 
 .open-close {
   position: relative;
-  left: -23px;
+  left: -20px;
   font-size: 1.5em;
-  top: 63px;
+  top: 60px;
   width: 16px;
-  font-weight: 600;
   cursor: pointer;
   display: block;
-  height: 45px;
+  height: 42px;
   vertical-align: top;
-  background: #3498db;
+  background: #267CB6;
   color: white;
   padding: 18px 2px 0px 2px;
+  border-radius: 4px 0px 0px 4px;
 }
 
 .adding-feedback {
   display: none;
-}
-
-.adding-feedback.visible {
-  display: inline-block;
+  font-family: 'Brandon Text', Avenir, Helvetica, sans-serif;
+  font-size: 11px;
   position: fixed;
   top: 0;
   right: 40%;
   background: #3498db;
   color: white;
-  padding: 5px 7px;
+  padding: 5px 8px;
+  border-radius: 0px 0px 2px 2px;
+}
+
+.adding-feedback.visible {
+  display: inline-block;
 }
 
 .feedback-controls button {
@@ -46,14 +49,9 @@
   outline: none;
   width: 100px;
   display: block;
-  margin-bottom: 3px;
   cursor: pointer;
   vertical-align: top;
-}
-
-.feedback-controls button:disabled {
-  background: #ccc;
-  color: #aaa;
+  border-bottom: 1px solid #267CB6;
 }
 
 .feedback .btn {
@@ -101,13 +99,13 @@
 }
 
 .feedback figure {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 100%;
   margin: 0;
   color: white;
   position: relative;
-  top: -4px;
-  right: -8px;
+  top: -3px;
+  right: -9px;
 }
 
 .feedback {

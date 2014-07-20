@@ -1,11 +1,10 @@
 addingFeedback = false;
 
 $(document).ready(function() {
-	$('body').append($('<span class="adding-feedback">Please click on an element to add a feedback...</span><span class="feedback-controls"><span class="open-close">|||</span><button id="add-feedback">ADD FEEDBACK</button><button id="toggle-notes">HIDE NOTES</button></span>'));
+	$('body').append($('<span class="adding-feedback">PLEASE CLICK ON AN ELEMENT TO ADD FEEDBACK</span><span class="feedback-controls"><span class="open-close">|||</span><button id="add-feedback">ADD FEEDBACK</button><button id="toggle-notes">HIDE NOTES</button></span>'));
 
 	$('#add-feedback').click(function() {
 		addingFeedback = true;
-		$('#add-feedback').attr('disabled', 'disabled');
 		$('.adding-feedback').addClass('visible');
 		$('body').append($('<style>body { cursor: -webkit-image-set(url(add.png) 1x, url(add.png) 2x),auto; }</style>'))
 		document.addEventListener('click', addFeedback, false);
@@ -34,7 +33,7 @@ $(document).ready(function() {
 	$("body *").hover(function(event) {
 		$('body *').css('outline', 'none');
 		if(addingFeedback) {
-			$(event.target).css('outline', '4px solid #3498db');
+			$(event.target).css('outline', '3px solid #3498db');
 		}
 	}, function(event) {
 		$(event.target).css('outline', 'none');
@@ -45,7 +44,6 @@ function addFeedback(event) {
 	if(addingFeedback && unique(event.target) != '#add-feedback' && !feedbackSelectors.contains(unique(event.target))) {
 		addingFeedback = false;
 		$('.adding-feedback').removeClass('visible');
-		$('#add-feedback').removeAttr('disabled');
 		event.stopImmediatePropagation();
 		$('body').append($('<style>body { cursor: auto; }</style>'))
 		document.removeEventListener('click', addFeedback, false);
