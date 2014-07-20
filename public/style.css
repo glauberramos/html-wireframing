@@ -1,10 +1,18 @@
+.example {
+  height: 20%;
+  width: 20%;
+  background: #ccc;
+  margin: 2em;
+  display: inline-block;
+}
+
 #add-feedback {
   position: fixed;
   top: 0;
   left: 0;
 }
 
-.btn {
+.feedback .btn {
   background: #5fbe20;
   color: white;
   border: none;
@@ -13,19 +21,11 @@
   margin-top: 7px;
 }
 
-.user {
+.feedback .user {
   background: #3498db;
   color: white;
   padding: 3px;
   display: inline-block;
-}
-
-.example {
-	height: 20%;
-	width: 20%;
-	background: #ccc;
-	margin: 2em;
-	display: inline-block;
 }
 
 .feedback {
@@ -77,11 +77,11 @@
   display: block;
 }
 
-.comment-span {
+.feedback .comment-span {
   float: left; 
 }
 
-.comment {
+.feedback .comment {
   line-height: 1em;
   display: block;
   float: left;
@@ -89,12 +89,12 @@
   width: 100%;
 }
 
-.comments {
+.feedback .comments {
   float: left;
   clear: both;
 }
 
-.comment-container {
+.feedback .comment-container {
   float: left;
   clear: both;
   border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -103,14 +103,14 @@
   z-index: 100;
 }
 
-.input-container {
+.feedback .input-container {
   float: left;
   clear: both;
   border-top: 1px solid #CCC;
   width: 250px;
 }
 
-.feedback-input {
+.feedback .feedback-input {
   outline: 0;
   height: 22px;
   background-color: #EEE;
@@ -125,10 +125,10 @@
   margin-top: 4px;
 }
 
-.feedback-input:first-child {
+.feedback .feedback-input:first-child {
   margin-top: 10px;
 }
 
-.feedback-input:focus, .feedback-input[value=""] {
+.feedback .feedback-input:focus, .feedback-input[value=""] {
   border: 1px solid transparent;
 }
