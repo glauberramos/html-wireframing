@@ -30,11 +30,12 @@
   font-size: 11px;
   position: fixed;
   top: 0;
-  right: 40%;
-  background: #3498db;
+  background: #267CB6;
   color: white;
   padding: 5px 8px;
-  border-radius: 0px 0px 2px 2px;
+  width: 100%;
+  left: 0;
+  text-align: center;
 }
 
 .adding-feedback.visible {
@@ -131,7 +132,7 @@
   border-color: #F3F3F3 transparent;
   border-width: 0px 7px 9px 7px;
   bottom: -2px;
-  left: 7px;
+  left: 6px;
   content: "";
   position: absolute;
   z-index: 99;
