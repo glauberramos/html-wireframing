@@ -5,6 +5,7 @@ $(document).ready(function() {
 
 	$('#add-feedback').click(function() {
 		addingFeedback = true;
+		$('body').append($('<style>body { cursor: cell; }</style>'))
 		document.addEventListener('click', addFeedback, false);
 	});
 });
@@ -12,6 +13,7 @@ $(document).ready(function() {
 function addFeedback(event) {
 	if(addingFeedback && unique(event.target) != '#add-feedback') {
 		addingFeedback = false;
+		$('body').append($('<style>body { cursor: auto; }</style>'))
 		document.removeEventListener('click', addFeedback, false);
 
 		var selector = unique(event.target);
