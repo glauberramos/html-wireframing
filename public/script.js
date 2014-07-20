@@ -13,6 +13,7 @@ $(document).ready(function() {
 function addFeedback(event) {
 	if(addingFeedback && unique(event.target) != '#add-feedback') {
 		addingFeedback = false;
+		event.stopImmediatePropagation();
 		$('body').append($('<style>body { cursor: auto; }</style>'))
 		document.removeEventListener('click', addFeedback, false);
 
