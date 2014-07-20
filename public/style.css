@@ -19,11 +19,13 @@
   width: 100%;
   height: 40px;
   margin-top: 7px;
+  cursor: pointer;
 }
 
 .feedback .btn:disabled {
   background: #ccc;
   color: #bbb;
+  cursor: not-allowed;
 }
 
 .feedback .user {
