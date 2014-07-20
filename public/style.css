@@ -55,6 +55,10 @@
   border-bottom: 1px solid #267CB6;
 }
 
+.feedback-controls button:last-child {
+  border-bottom: none;
+}
+
 .feedback .btn {
   background: #5fbe20;
   color: white;
