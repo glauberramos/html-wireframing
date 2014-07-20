@@ -5,8 +5,8 @@ feedbackTemplate =
 '    <div class="comments">' +
 '      {{#comments}}' +
 '      <div class="comment-container">' +
-'        <label class="user">{{userName}}</label>' +
 '        <label class="comment">{{text}}</label>' +
+'        <label class="user">{{userName}}</label>' +
 '      </div>' +
 '      {{/comments}}' +
 '    </div>' +
@@ -20,8 +20,8 @@ feedbackTemplate =
 
 var commentTemplate =
 '<div class="comment-container">' +
-'    <label class="user">{{userName}}</label>' +
 '    <label class="comment">{{text}}</label>' +
+'    <label class="user">{{userName}}</label>' +
 '</div>';
 
 

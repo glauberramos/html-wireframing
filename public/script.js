@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 	$('#add-feedback').click(function() {
 		addingFeedback = true;
-		$('body').append($('<style>body { cursor: cell; }</style>'))
+		$('body').append($('<style>body { cursor: -webkit-image-set(url(add.png) 1x, url(add.png) 2x),auto; }</style>'))
 		document.addEventListener('click', addFeedback, false);
 	});
 });
