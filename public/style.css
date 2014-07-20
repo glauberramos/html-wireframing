@@ -20,6 +20,20 @@
   cursor: pointer;
 }
 
+.adding-feedback {
+  display: none;
+}
+
+.adding-feedback.visible {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  right: 40%;
+  background: #5fbe20;
+  color: white;
+  padding: 5px 7px;
+}
+
 .feedback-controls button {
   height: 30px;
   background: #5fbe20;
