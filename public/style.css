@@ -80,6 +80,7 @@
   border-radius: 2px;
   display: inline-block;
   max-width: 223px;
+  font-weight: normal;
 }
 
 .feedback {
@@ -156,6 +157,7 @@
   margin-bottom: 8px;
   margin-right: 22px;
   width: 85%;
+  font-weight: normal;
 }
 
 .feedback .comments {
