@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       },
       build: {
         src: ['public/**.js'],
-        dest: 'uifeedback.min.js'
+        dest: 'public/uifeedback.min.js'
       }
     }
   });
