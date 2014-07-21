@@ -44,6 +44,7 @@ function addFeedback(event) {
 	if(addingFeedback 
 	&& unique(event.target) != '#add-feedback' 
 	&& unique(event.target) != '#toggle-notes' 
+	&& unique(event.target) != 'html > body'
 	&& !feedbackSelectors.contains(unique(event.target)) 
 	&& !(unique(event.target).indexOf('.feedback') > -1) 
 	&& !(unique(event.target).indexOf('.feedback-controls') > -1) 
