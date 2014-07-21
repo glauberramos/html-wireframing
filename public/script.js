@@ -1,7 +1,7 @@
 addingFeedback = false;
 
 $(document).ready(function() {
-	$('body').append($('<span class="adding-feedback">PLEASE CLICK ON AN ELEMENT TO ADD A NOTE</span><span class="feedback-controls"><span class="open-close">|||</span><button id="add-feedback">ADD NOTE</button><button id="toggle-notes">HIDE NOTES</button></span>'));
+	$('body').append($('<span class="adding-feedback">PLEASE CLICK ON AN ELEMENT TO ADD A NOTE</span><span class="feedback-controls"><span class="open-close">|||</span><span class="feedback-buttons"><button id="add-feedback">ADD NOTE</button><button id="toggle-notes">HIDE NOTES</button></span></span>'));
 
 	$('#add-feedback').click(function() {
 		addingFeedback = true;
@@ -12,10 +12,10 @@ $(document).ready(function() {
 
 	$('.open-close').click(function() {
 		if(!$('.feedback-controls').hasClass('open')) {
-			$('.feedback-controls').animate({ width: 100}, 200);
+			$('.feedback-controls').animate({ right: 0}, 200);
 			$('.feedback-controls').addClass('open');
 		} else {
-			$('.feedback-controls').animate({ width: 0}, 200);
+			$('.feedback-controls').animate({ right: '-7%'}, 200);
 			$('.feedback-controls').removeClass('open');
 		}
 	});

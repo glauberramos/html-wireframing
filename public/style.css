@@ -1,21 +1,15 @@
 .feedback-controls {
   position: fixed;
   top: 40%;
-  right: 0;
-}
-
-.feedback-controls {
-  width: 0px;
+  right: -7%;
 }
 
 .open-close {
-  position: relative;
-  left: -18px;
+  display: inline-block;
   font-size: 1.3em;
   top: 60px;
   width: 16px;
   cursor: pointer;
-  display: block;
   height: 42px;
   vertical-align: top;
   background: #267CB6;
@@ -39,6 +33,10 @@
 }
 
 .adding-feedback.visible {
+  display: inline-block;
+}
+
+.feedback-buttons {
   display: inline-block;
 }
 
