@@ -1,6 +1,5 @@
 newData = [];
 feedbackSelectors = [];
-var appKey = 'TFApAzsBF8yDAdpT';
 
 var query = new Parse.Query(Feedback);
 query.equalTo("appKey", appKey);
@@ -9,7 +8,7 @@ var count = 0;
 query.find({
   success: function(results) {
     $(results).each(function() {
-    	var feedback = new uifeedback.model.feedback(this.get('feedbackId'), this.get('selector')); 
+    	var feedback = new uifeedback.model.feedback(this.get('feedbackId'), this.get('selector'));
     	feedbackSelectors.push(this.get('selector'));
 
 		var query = new Parse.Query(Comment);
@@ -41,7 +40,7 @@ function renderData() {
     	var feedbackId = this.number();
 
         $(feedbackHtml).prependTo(this.selector()).find('textarea').autosize();
-
+        $('[data-id=' + feedbackId + '] .feedback-content').removeClass('open');
         $('[data-id=' + feedbackId + ']').find('.btn').unbind('click').bind('click', function() {
     		addComment(feedbackId);
     	});

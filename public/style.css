@@ -97,7 +97,6 @@
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
   border-radius: 50px;
-  z-index: 95;
   padding: 10px 0 0 0 !important;
   margin-top: -10px;
   margin-left: -10px;
@@ -119,6 +118,7 @@
 
 .feedback .feedback-content {
     display: none;
+    position: absolute;
     background-color: #f3f3f3;
     border-radius: 7px;
     margin-top: 1px;
@@ -129,17 +129,21 @@
 
 .feedback:hover .feedback-content {
   display: block;
+  z-index: 999;
+}
+
+.feedback .feedback-content.open {
+  display: block;
 }
 
 .feedback .feedback-content:before {
   border: solid;
   border-color: #F3F3F3 transparent;
   border-width: 0px 7px 9px 7px;
-  bottom: -2px;
-  left: 6px;
+  top: -9px;
+  left: 7px;
   content: "";
   position: absolute;
-  z-index: 99;
 }
 
 .feedback .comment-span {
@@ -166,7 +170,6 @@
   border-bottom: 1px solid rgba(0,0,0,0.05);
   width: 250px;
   padding: 10px;
-  z-index: 100;
 }
 
 .feedback .feedback-input {

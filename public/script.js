@@ -48,6 +48,8 @@ function addFeedback(event) {
 	&& !(unique(event.target).indexOf('.feedback') > -1) 
 	&& !(unique(event.target).indexOf('.feedback-controls') > -1) 
 	&& !(unique(event.target).indexOf('.adding-feedback') > -1)) {
+		
+		//disable mode of adding feedback
 		addingFeedback = false;
 		$('.adding-feedback').removeClass('visible');
 		event.stopImmediatePropagation();
@@ -69,6 +71,7 @@ function addFeedback(event) {
 		feedback.save({
 		  success: function(comments) {
 			$('[data-id=' + nextFeedbackId + ']').find('.btn').unbind('click').bind('click', function() {
+				$(this).parent().parent().removeClass('open');
 	    		addComment(nextFeedbackId);
 	    	});
 		  }

@@ -1,7 +1,7 @@
 feedbackTemplate = 
 '<span data-id="{{number}}" class="feedback">' +
 '  <figure>{{number}}</figure>' +
-'  <span class="feedback-content">' +
+'  <span class="feedback-content open">' +
 '    <div class="comments">' +
 '      {{#comments}}' +
 '      <div class="comment-container">' +
