@@ -1,6 +1,6 @@
 newData = [];
 feedbackSelectors = [];
-var appKey = 'TFApAzGBF8yDAdpT';
+var appKey = 'TFApAzsBF8yDAdpT';
 
 var query = new Parse.Query(Feedback);
 query.equalTo("appKey", appKey);
@@ -40,7 +40,7 @@ function renderData() {
     	var feedbackHtml = Mustache.render(feedbackTemplate, this);
     	var feedbackId = this.number();
 
-        $(this.selector()).prepend(feedbackHtml);
+        $(feedbackHtml).prependTo(this.selector()).find('textarea').autosize();
 
         $('[data-id=' + feedbackId + ']').find('.btn').unbind('click').bind('click', function() {
     		addComment(feedbackId);
@@ -55,6 +55,7 @@ function addComment(id) {
       feedback.find('.btn').attr('disabled', 'disabled');
 	  var query = new Parse.Query(Feedback);
 	  query.equalTo("feedbackId", id);
+	  query.equalTo("appKey", appKey);
 	  query.find({
 	    success: function(feedbacks) {
 		  var comment = new Comment();
@@ -63,9 +64,12 @@ function addComment(id) {
 		  comment.set('text', feedback.find('.text').val());
 		  comment.save();
 
-	  	  $(feedback).find('.comments').append(Mustache.render(commentTemplate, new uifeedback.model.comment(feedback.find('.name').val(), feedback.find('.text').val())));
+		  var newComment = Mustache.render(commentTemplate, new uifeedback.model.comment(feedback.find('.name').val(), feedback.find('.text').val()));
+
+	  	  $(newComment).appendTo('[data-id=' + id + '] .comments').show('normal');
 	  	  feedback.find('.name').val('')
 	  	  feedback.find('.text').val('')
+	  	  feedback.find('textarea').css('height', '35px')
 	  	  feedback.find('.btn').removeAttr('disabled');
 		}
 	  });

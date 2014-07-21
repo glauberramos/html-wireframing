@@ -10,16 +10,16 @@ feedbackTemplate =
 '      </div>' +
 '      {{/comments}}' +
 '    </div>' +
-'    <div id="input-container">' +
+'    <div class="input-container">' +
 '      <input class="feedback-input name" placeholder="Write your name..." type="text" />' +
-'      <input class="feedback-input text" placeholder="Write a comment..." type="text" />' +
+'      <textarea class="feedback-input text" placeholder="Write a comment..." />' +
 '      <input class="btn" type="button" value="POST THIS COMMENT" />' +
 '    </div>' +
 '  </div>' +
 '</span>';
 
 var commentTemplate =
-'<div class="comment-container">' +
+'<div style="display: none" class="comment-container">' +
 '    <label class="comment">{{text}}</label>' +
 '    <label class="user">{{userName}}</label>' +
 '</div>';

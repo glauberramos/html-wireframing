@@ -165,20 +165,12 @@
   clear: both;
   border-bottom: 1px solid rgba(0,0,0,0.05);
   width: 250px;
-  padding: 15px;
+  padding: 10px;
   z-index: 100;
-}
-
-.feedback .input-container {
-  float: left;
-  clear: both;
-  border-top: 1px solid #CCC;
-  width: 250px;
 }
 
 .feedback .feedback-input {
   outline: 0;
-  height: 22px;
   background-color: #EEE;
   border-radius: 1px;
   margin-left: 8px;
@@ -187,8 +179,16 @@
   background: none;
   border: 1px dashed #ccc;
   padding: 7px;
-  height: 30px;
+  min-height: 30px;
   margin-top: 4px;
+  font-family: 'Brandon Text', Avenir, Helvetica, sans-serif;
+  color: #444;
+  font-size: 14px;
+}
+
+.feedback textarea {
+    resize: none;
+    overflow-y: hidden;
 }
 
 .feedback .feedback-input:first-child {

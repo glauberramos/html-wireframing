@@ -41,7 +41,13 @@ $(document).ready(function() {
 });
 
 function addFeedback(event) {
-	if(addingFeedback && unique(event.target) != '#add-feedback' && !feedbackSelectors.contains(unique(event.target))) {
+	if(addingFeedback 
+	&& unique(event.target) != '#add-feedback' 
+	&& unique(event.target) != '#toggle-notes' 
+	&& !feedbackSelectors.contains(unique(event.target)) 
+	&& !(unique(event.target).indexOf('.feedback') > -1) 
+	&& !(unique(event.target).indexOf('.feedback-controls') > -1) 
+	&& !(unique(event.target).indexOf('.adding-feedback') > -1)) {
 		addingFeedback = false;
 		$('.adding-feedback').removeClass('visible');
 		event.stopImmediatePropagation();
@@ -54,7 +60,7 @@ function addFeedback(event) {
 
 		var feedbackFrontend = new uifeedback.model.feedback(nextFeedbackId, selector); 
 		var feedbackHtml = Mustache.render(feedbackTemplate, feedbackFrontend);
-		$(selector).prepend(feedbackHtml);
+		$(feedbackHtml).prependTo(selector).find('textarea').autosize();
 
 		var feedback = new Feedback();
 		feedback.set('appKey', appKey);
