@@ -57,6 +57,7 @@ function addFeedback(event) {
 		$(selector).prepend(feedbackHtml);
 
 		var feedback = new Feedback();
+		feedback.set('appKey', appKey);
 		feedback.set('feedbackId', nextFeedbackId);
 		feedback.set('selector', selector);
 		feedback.save({

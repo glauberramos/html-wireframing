@@ -1,7 +1,9 @@
 newData = [];
 feedbackSelectors = [];
+var appKey = 'TFApAzGBF8yDAdpT';
 
 var query = new Parse.Query(Feedback);
+query.equalTo("appKey", appKey);
 var count = 0;
 
 query.find({
