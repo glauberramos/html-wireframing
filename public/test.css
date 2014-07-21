@@ -1,7 +1,107 @@
+body {
+	font-size: 20px;
+	color: #444;
+	padding: 2em 8em;
+	font-family: "Helvetica Neue", "Helvetica", "Sans Serif";
+}
+
 .example {
-  height: 20%;
-  width: 20%;
+  height: 25%;
+  width: 29.2%;
   background: #ccc;
-  margin: 2em;
+  margin-right: 1em;
+  margin-bottom: 1em;
   display: inline-block;
+  padding-top: 1em;
+  padding-left: 1em;
+  border-radius: 2px;
+}
+
+.big-box {
+	width: 100%;
+	height: 4em;
+	margin: 0.5em 0;
+	display: inline-block;
+	background: #999;
+}
+
+.fullline {
+	width: 100%;
+	height: 2em;
+	margin: 0.5em 0;
+	background: #ccc;
+	display: inline-block;
+	padding-top: 0.5em;
+	padding-left: 0.5em;
+}
+
+.halfline {
+	width: 50%;
+	height: 2em;
+	margin: 0.5em 0;
+	background: #eee;
+	display: inline-block;
+	margin-right: 30%;
+	margin-bottom: 1em;
+}
+
+footer {
+	background: #888;
+	width: 100%;
+	height: 10em;
+}
+
+header {
+	background: #ccc;
+	height: 3em;
+	border-radius: 2px;
+}
+
+header ul {
+	padding-left: 0;
+	margin: 0;
+}
+
+header li {
+	display: inline-block;
+	margin-right: 1em;
+	margin-top: 1em;
+	vertical-align: top;
+}
+
+p.two {
+	column-count: 2;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	-moz-column-gap: 50px;
+	-webkit-column-gap: 50px;
+	column-gap: 500px;
+	line-height: 1.7em;
+	width: 68%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+p.paragraph-title {
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+menu {
+	display: inline-block;
+	margin: 0;
+}
+
+.circle {
+	border-radius: 50%;
+	width: 40px;
+	float: right;
+	margin-right: 1em;
+	margin-top: 0.5em;
+	height: 40px;
+	background: #777;
+	display: inline-block;
 }
