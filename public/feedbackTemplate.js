@@ -23,6 +23,3 @@ var commentTemplate =
 '    <label class="comment">{{text}}</label>' +
 '    <label class="user">{{userName}}</label>' +
 '</div>';
-
-
-'<span class="feedback"></span>'
