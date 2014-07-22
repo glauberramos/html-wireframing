@@ -1,8 +1,9 @@
 var uifeedback = uifeedback || {};
 	uifeedback.model = uifeedback.model || {}
 
-	uifeedback.model.feedback = function(number, selector) {
+	uifeedback.model.feedback = function(feedbackId, number, selector) {
 	var comments = [];
+	var feedbackId = feedbackId || 0;
 	var number = number || 0;
 	var selector = selector || 0;
 
@@ -12,6 +13,7 @@ var uifeedback = uifeedback || {};
 
 	return {
 		selector: function() { return selector; },
+		feedbackId: function() { return feedbackId; },
 		number: function() { return number; },
 		comments: function() { return comments; },
 		addComment: addComment

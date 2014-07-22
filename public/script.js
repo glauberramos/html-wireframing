@@ -41,14 +41,15 @@ $(document).ready(function() {
 });
 
 function addFeedback(event) {
-	if(addingFeedback 
-	&& unique(event.target) != '#add-feedback' 
-	&& unique(event.target) != '#toggle-notes' 
-	&& unique(event.target) != 'html > body'
-	&& !feedbackSelectors.contains(unique(event.target)) 
-	&& !(unique(event.target).indexOf('.feedback') > -1) 
-	&& !(unique(event.target).indexOf('.feedback-controls') > -1) 
-	&& !(unique(event.target).indexOf('.adding-feedback') > -1)) {
+	if(addingFeedback
+		&& unique(event.target) != '#add-feedback' 
+		&& unique(event.target) != '#toggle-notes' 
+		&& unique(event.target) != 'html > body'
+		&& !feedbackSelectors.contains(unique(event.target)) 
+		&& !(unique(event.target).indexOf('.feedback') > -1) 
+		&& !(unique(event.target).indexOf('.feedback-controls') > -1) 
+		&& !(unique(event.target).indexOf('.adding-feedback') > -1)
+	) {
 		
 		//disable mode of adding feedback
 		addingFeedback = false;
@@ -59,11 +60,12 @@ function addFeedback(event) {
 
 		//adding feedbackselector to the list
 		var selector = unique(event.target);
-		var nextFeedbackId = $('.feedback').length + 1;
+		var feedbackId = randomString();
+		var nextFeedbackNumber = $('.feedback').length + 1;
 		feedbackSelectors.push(selector);
 
 		//create model and html
-		var feedbackFrontend = new uifeedback.model.feedback(nextFeedbackId, selector); 
+		var feedbackFrontend = new uifeedback.model.feedback(feedbackId, nextFeedbackNumber, selector); 
 		newData.push(feedbackFrontend);
 		var feedbackHtml = Mustache.render(feedbackTemplate, feedbackFrontend);
 		var newFeedback = $(feedbackHtml).prependTo(selector);
@@ -72,14 +74,15 @@ function addFeedback(event) {
 		newFeedback.addClass('new');
 		newFeedback.find('.feedback-content').addClass('open');
 		newFeedback.find('textarea').autosize();
+		newFeedback.find('input').first().focus();
 		newFeedback.find('.feedback-content').mouseleave(function() {
 			$(this).removeClass('open');
 		});
 
 		//binding add comment
-		$('[data-id=' + nextFeedbackId + ']').find('.btn').unbind('click').bind('click', function() {
+		$('[data-id=' + feedbackId + ']').find('.btn').unbind('click').bind('click', function() {
 			$(this).parent().parent().removeClass('open');
-    		addComment(nextFeedbackId);
+    		addComment(feedbackId);
     	});
 	}
 }

@@ -9,7 +9,8 @@ var count = 0;
 query.find({
   success: function(results) {
     $(results).each(function() {
-    	var feedback = new uifeedback.model.feedback(this.get('feedbackId'), this.get('selector'));
+    	count++;
+    	var feedback = new uifeedback.model.feedback(this.get('feedbackId'), count, this.get('selector'));
     	feedbackSelectors.push(this.get('selector'));
 
 		var query = new Parse.Query(Comment);
@@ -17,7 +18,6 @@ query.find({
 		query.ascending("createdAt");
 		query.find({
 		  success: function(comments) {
-		  	count++;
 		    $(comments).each(function() {
 		    	feedback.addComment(this.get('userName'), this.get('text'));
 		    });
@@ -39,7 +39,7 @@ query.find({
 function renderData() {
 	$(newData).each(function() {
     	var feedbackHtml = Mustache.render(feedbackTemplate, this);
-    	var feedbackId = this.number();
+    	var feedbackId = this.feedbackId();
 
         $(feedbackHtml).prependTo(this.selector()).find('textarea').autosize();
         $('[data-id=' + feedbackId + ']').find('.btn').unbind('click').bind('click', function() {
@@ -51,7 +51,7 @@ function renderData() {
 function findSelector(id) {
 	var returnSelector;
 	$(newData).each(function() {
-		if(this.number() === id) {
+		if(this.feedbackId() === id) {
 			returnSelector = this.selector();
 		}
 	});
