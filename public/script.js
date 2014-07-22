@@ -57,25 +57,29 @@ function addFeedback(event) {
 		$('body').append($('<style>body { cursor: auto; }</style>'))
 		document.removeEventListener('click', addFeedback, false);
 
+		//adding feedbackselector to the list
 		var selector = unique(event.target);
 		var nextFeedbackId = $('.feedback').length + 1;
 		feedbackSelectors.push(selector);
 
+		//create model and html
 		var feedbackFrontend = new uifeedback.model.feedback(nextFeedbackId, selector); 
+		newData.push(feedbackFrontend);
 		var feedbackHtml = Mustache.render(feedbackTemplate, feedbackFrontend);
-		$(feedbackHtml).prependTo(selector).find('textarea').autosize();
+		var newFeedback = $(feedbackHtml).prependTo(selector);
 
-		var feedback = new Feedback();
-		feedback.set('appKey', appKey);
-		feedback.set('feedbackId', nextFeedbackId);
-		feedback.set('selector', selector);
-		feedback.save({
-		  success: function(comments) {
-			$('[data-id=' + nextFeedbackId + ']').find('.btn').unbind('click').bind('click', function() {
-				$(this).parent().parent().removeClass('open');
-	    		addComment(nextFeedbackId);
-	    	});
-		  }
+		//settings on new feedback
+		newFeedback.addClass('new');
+		newFeedback.find('.feedback-content').addClass('open');
+		newFeedback.find('textarea').autosize();
+		newFeedback.find('.feedback-content').mouseleave(function() {
+			$(this).removeClass('open');
 		});
+
+		//binding add comment
+		$('[data-id=' + nextFeedbackId + ']').find('.btn').unbind('click').bind('click', function() {
+			$(this).parent().parent().removeClass('open');
+    		addComment(nextFeedbackId);
+    	});
 	}
 }
