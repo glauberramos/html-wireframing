@@ -5,12 +5,13 @@ var query = new Parse.Query(Feedback);
 query.ascending("createdAt");
 query.equalTo("appKey", appKey);
 var count = 0;
+var numberCount = 0;
 
 query.find({
   success: function(results) {
     $(results).each(function() {
-    	count++;
-    	var feedback = new uifeedback.model.feedback(this.get('feedbackId'), count, this.get('selector'));
+    	numberCount++;
+    	var feedback = new uifeedback.model.feedback(this.get('feedbackId'), numberCount, this.get('selector'));
     	feedbackSelectors.push(this.get('selector'));
 
 		var query = new Parse.Query(Comment);
@@ -18,6 +19,7 @@ query.find({
 		query.ascending("createdAt");
 		query.find({
 		  success: function(comments) {
+		  	count++;
 		    $(comments).each(function() {
 		    	feedback.addComment(this.get('userName'), this.get('text'));
 		    });
