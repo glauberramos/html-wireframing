@@ -65,6 +65,7 @@
   height: 40px;
   margin-top: 7px;
   cursor: pointer;
+  border-radius: 0px 0 6px 6px;
 }
 
 .feedback .btn:disabled {
