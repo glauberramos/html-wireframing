@@ -24,13 +24,21 @@ module.exports = function(grunt) {
         src: jsFiles,
         dest: 'public/uifeedback.min.js'
       }
+    },
+    cssmin: {
+      my_target: {
+          src: 'public/style.css',
+          dest: 'public/uifeedback.min.css'
+      }
     }
   });
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
+  grunt.loadNpmTasks('grunt-css');
+
   // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['uglify', 'cssmin']);
 
 };
