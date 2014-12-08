@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('fonts/opensans-regular-webfont.eot');
+    src: url('fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/opensans-regular-webfont.ttf') format('truetype'),
+         url('fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('fonts/opensans-bold-webfont.eot');
+    src: url('fonts/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/opensans-bold-webfont.ttf') format('truetype'),
+         url('fonts/opensans-bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansItalic';
+    src: url('fonts/opensans-italic-webfont.eot');
+    src: url('fonts/opensans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/opensans-italic-webfont.woff') format('woff'),
+         url('fonts/opensans-italic-webfont.ttf') format('truetype'),
+         url('fonts/opensans-italic-webfont.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansLight';
+    src: url('fonts/opensans-light-webfont.eot');
+    src: url('fonts/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/opensans-light-webfont.ttf') format('truetype'),
+         url('fonts/opensans-light-webfont.svg#open_sans_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: "OpenSans";
+	font-size: 16px;
+	width: 60%;
+	margin: 2em auto;
+	text-align: center;
+}
+
+div {
+    font-size: 18px;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+h1 {
+    color: #F92672;
+    font-family: "OpenSansBold";
+    font-size: 2.5em;
+}
+
+h3 {
+    color: #F92672;
+    font-size: 1.5em;
+    font-family: "OpenSans";
+    margin-top: 1em;
+}
+
+a, a:visited, a:focus {
+    text-decoration: none;
+    color: #F92672;
+}
+
+em {
+    color: #F92672;
+    font-size: 1.1em;
+    font-family: "OpenSansLight";
+}
+
+img {
+    width: 50%;
+    border: 3px solid #FFC3D9;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 1em;
+}
+
+pre {
+	padding: 20px;
+	line-height: 1.4em;
+	border-radius: 3px;
+	color: white;
+	background: #272822;
+	width: 70%;
+	margin: 2em auto;
+	text-align: left;
+}
+
+pre	.property {
+	color: #66D9EF;
+}
+
+pre	.value {
+	color: #A6E22E;
+}
+
+pre	.selector {
+	color: #F92672;
+}
