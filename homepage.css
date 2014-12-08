@@ -66,13 +66,21 @@ h3 {
     margin-top: 1em;
 }
 
+.logo {
+    background: #272822;
+    border-radius: 3px;
+    padding: 3px 10px;
+    color: white;
+    font-family: "OpenSans";
+}
+
 a, a:visited, a:focus {
     text-decoration: none;
     color: #F92672;
 }
 
 em {
-    color: #F92672;
+    color: #12A8C5;
     font-size: 1.1em;
     font-family: "OpenSansLight";
 }
@@ -91,19 +99,19 @@ pre {
 	border-radius: 3px;
 	color: white;
 	background: #272822;
-	width: 70%;
+	width: 75%;
 	margin: 2em auto;
 	text-align: left;
 }
 
-pre	.property {
+.property {
 	color: #66D9EF;
 }
 
-pre	.value {
+.value {
 	color: #A6E22E;
 }
 
-pre	.selector {
+.selector {
 	color: #F92672;
 }
